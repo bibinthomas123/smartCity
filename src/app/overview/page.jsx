@@ -167,9 +167,7 @@ export default function OverviewPage() {
         <GlassCard>
           <div className="divide-y" style={{ borderColor: "rgba(160,130,90,0.18)" }}>
             {featuredDatasets.map((ds, i) => (
-              <div key={i} className="flex items-center gap-4 px-5 py-4 transition-colors cursor-pointer group"
-                onMouseEnter={e => e.currentTarget.style.background = "rgba(193,127,36,0.05)"}
-                onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
+              <div key={i} className="flex items-center gap-4 px-5 py-4 transition-colors cursor-pointer group hover:bg-amber-50/60">
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                   style={{ background: "rgba(193,127,36,0.10)", border: "1px solid rgba(193,127,36,0.22)" }}
