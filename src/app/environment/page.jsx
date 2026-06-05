@@ -3,6 +3,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import { energyMix } from "@/lib/mockData";
 import EnvironmentCharts from "./EnvironmentCharts";
 import { Leaf, Drop, Sun, Wind, TrendDown, CheckCircle, Info } from "@phosphor-icons/react/dist/ssr";
+import WasteSortingGuide from "./WasteSortingGuide";
 
 const stats = [
   { label: "Sustainability Score", value: "72/100", sub: "+5 pts this year",  color: "#059669" },
@@ -123,23 +124,8 @@ export default function EnvironmentPage() {
       {/* ── Charts ────────────────────────────────────────────────────────── */}
       <EnvironmentCharts />
 
-      {/* ── Insight cards ─────────────────────────────────────────────────── */}
-      <div className="grid lg:grid-cols-3 gap-5">
-        {insights.map((ins) => (
-          <div key={ins.title} className="rounded-2xl p-5" style={{ background: ins.bg, border: `1px solid ${ins.border}` }}>
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: "rgba(255,249,235,0.80)", border: `1px solid ${ins.border}` }}>
-                <ins.icon size={15} weight="fill" style={{ color: ins.accent }} />
-              </div>
-              <p className="text-[13px] font-bold" style={{ color: "#2D1F0F" }}>{ins.title}</p>
-            </div>
-            <p className="text-[12.5px] leading-relaxed" style={{ color: "rgba(45,31,15,0.62)" }}>{ins.body}</p>
-          </div>
-        ))}
-      </div>
+      <WasteSortingGuide />
 
-      {/* ── Energy breakdown + AQI scale ──────────────────────────────────── */}
       <div className="grid lg:grid-cols-2 gap-6">
         <GlassCard className="p-6">
           <p className="text-[13px] font-semibold mb-1" style={{ color: "rgba(45,31,15,0.60)" }}>Energy Source Breakdown</p>
