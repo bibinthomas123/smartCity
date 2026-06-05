@@ -20,7 +20,7 @@ export default function PeopleCharts() {
           data={populationHistory}
           dataKey="total"
           xKey="year"
-          color="#a855f7"
+          color="#0D9488"
           height={220}
           formatter={fmt}
           gradientId="peoplePop"
@@ -35,8 +35,8 @@ export default function PeopleCharts() {
           <LineWidget
             data={populationHistory}
             lines={[
-              { dataKey: "male",   color: "#6366f1", name: "Male"   },
-              { dataKey: "female", color: "#c084fc", name: "Female" },
+              { dataKey: "male",   color: "#0891B2", name: "Male"   },
+              { dataKey: "female", color: "#C17F24", name: "Female" },
             ]}
             xKey="year"
             height={200}
@@ -52,8 +52,8 @@ export default function PeopleCharts() {
           <BarWidget
             data={migrationData}
             bars={[
-              { dataKey: "arrivals",   color: "#a855f7", name: "Arrivals"   },
-              { dataKey: "departures", color: "#6366f1", name: "Departures" },
+              { dataKey: "arrivals",   color: "#059669", name: "Arrivals"   },
+              { dataKey: "departures", color: "#EA580C", name: "Departures" },
             ]}
             xKey="year"
             height={200}

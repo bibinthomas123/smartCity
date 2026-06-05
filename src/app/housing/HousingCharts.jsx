@@ -16,7 +16,7 @@ export default function HousingCharts() {
         <GlassCard className="p-6">
           <T>Housing Mix</T>
           <p className="text-[11px] mb-2" style={{ color: "rgba(45,31,15,0.35)" }}>By type · 2024</p>
-          <DonutWidget data={housingByType} height={230} innerRadius={60} outerRadius={95} />
+          <DonutWidget data={housingByType} height={300} innerRadius={60} outerRadius={95} />
         </GlassCard>
 
         <GlassCard className="p-6 lg:col-span-2">

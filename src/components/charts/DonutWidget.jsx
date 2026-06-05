@@ -49,7 +49,7 @@ export default function DonutWidget({
           <Legend
             iconType="circle"
             iconSize={8}
-            wrapperStyle={{ fontSize: "11px", color: "rgba(45,31,15,0.52)" }}
+            wrapperStyle={{ fontSize: "11px", color: "rgba(45,31,15,0.52)" , paddingTop:"20px"}}
           />
         )}
       </PieChart>

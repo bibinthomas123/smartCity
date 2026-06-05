@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 export default function GlassCard({ className, children, glow, style }) {
   const glowMap = {
     blue:   "0 0 40px rgba(37,99,235,0.12)",
-    purple: "0 0 40px rgba(124,58,237,0.12)",
+    teal:   "0 0 40px rgba(13,148,136,0.12)",
     green:  "0 0 40px rgba(5,150,105,0.12)",
     amber:  "0 0 40px rgba(193,127,36,0.16)",
     cyan:   "0 0 40px rgba(8,145,178,0.12)",

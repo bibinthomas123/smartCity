@@ -24,7 +24,7 @@ export default function AboutPage() {
     <div className="page-fade-in p-6 lg:p-8 space-y-10 max-w-5xl mx-auto">
 
       <PageHeader
-        title="About CityPulse"
+        title="About "
         subtitle="Open city data for Magdeburg — rigorously collected and beautifully presented."
       />
 

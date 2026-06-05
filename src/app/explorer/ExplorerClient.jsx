@@ -80,9 +80,9 @@ export default function ExplorerClient() {
             onClick={() => setActiveFmt(fmt)}
             className="px-3 py-1.5 rounded-full text-[12px] font-medium transition-all duration-120"
             style={{
-              background: activeFmt === fmt ? "rgba(124,58,237,0.14)" : "rgba(45,31,15,0.05)",
-              color: activeFmt === fmt ? "#7C3AED" : "rgba(45,31,15,0.42)",
-              border: `1px solid ${activeFmt === fmt ? "rgba(124,58,237,0.28)" : "rgba(45,31,15,0.12)"}`,
+              background: activeFmt === fmt ? "rgba(193,127,36,0.14)" : "rgba(45,31,15,0.05)",
+              color: activeFmt === fmt ? "#C17F24" : "rgba(45,31,15,0.42)",
+              border: `1px solid ${activeFmt === fmt ? "rgba(193,127,36,0.28)" : "rgba(45,31,15,0.12)"}`,
             }}
           >
             {fmt}

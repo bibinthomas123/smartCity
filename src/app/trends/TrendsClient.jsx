@@ -9,10 +9,10 @@ import { cityEvolution } from "@/lib/mockData";
 const METRICS = [
   { key: "population",  label: "Population",       color: "#2563EB", fmt: (v) => (v/1e6).toFixed(2)+"M" },
   { key: "employment",  label: "Employment Rate",   color: "#059669", fmt: (v) => v+"%"                  },
-  { key: "co2",         label: "CO₂ Emissions",    color: "#7C3AED", fmt: (v) => (v/1e6).toFixed(2)+"Mt"},
+  { key: "co2",         label: "CO₂ Emissions",    color: "#059669", fmt: (v) => (v/1e6).toFixed(2)+"Mt"},
   { key: "transit",     label: "Transit Ridership", color: "#0891B2", fmt: (v) => (v/1e6).toFixed(2)+"M" },
   { key: "housing",     label: "Construction",      color: "#C17F24", fmt: (v) => v                       },
-  { key: "education",   label: "Education Index",   color: "#4F46E5", fmt: (v) => v                       },
+  { key: "education",   label: "Education Index",   color: "#1D4ED8", fmt: (v) => v                       },
 ];
 
 export default function TrendsClient() {

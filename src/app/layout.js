@@ -3,7 +3,7 @@ import Sidebar from "@/components/layout/Sidebar";
 import MobileHeader from "@/components/layout/MobileHeader";
 
 export const metadata = {
-  title: "CityPulse — Magdeburg City Explorer",
+  title: "Magdeburg City Explorer",
   description: "Explore real-time and historical data for Magdeburg: people, housing, mobility, environment, economy and more.",
 };
 

@@ -1,9 +1,10 @@
+
 // ─── Overview ────────────────────────────────────────────────────────────────
 export const cityHealthScore = 84;
 
 export const kpis = [
   { id: "pop",  label: "Population",       value: "1.89M", raw: 1890000, unit: "",    change: +1.2, changeType: "up",   color: "#3b82f6", sparkData: [1.72,1.74,1.77,1.79,1.80,1.83,1.86,1.89] },
-  { id: "gdp",  label: "GDP Growth",        value: "3.4%",  raw: 3.4,    unit: "%",   change: +0.8, changeType: "up",   color: "#a855f7", sparkData: [1.8,2.1,1.9,2.4,2.8,3.0,2.6,3.4] },
+  { id: "gdp",  label: "GDP Growth",        value: "3.4%",  raw: 3.4,    unit: "%",   change: +0.8, changeType: "up",   color: "#E8963A", sparkData: [1.8,2.1,1.9,2.4,2.8,3.0,2.6,3.4] },
   { id: "emp",  label: "Employment Rate",   value: "97.2%", raw: 97.2,   unit: "%",   change: +0.3, changeType: "up",   color: "#10b981", sparkData: [95.1,95.4,95.9,96.2,96.5,96.8,97.0,97.2] },
   { id: "sus",  label: "Sustainability",    value: "72/100",raw: 72,     unit: "pts", change: +5,   changeType: "up",   color: "#f59e0b", sparkData: [55,58,60,62,63,66,68,72] },
 ];
@@ -49,12 +50,12 @@ export const populationHistory = [
 ];
 
 export const ageGroups = [
-  { group: "0–14",  value: 15.2, color: "#a855f7" },
-  { group: "15–24", value: 11.4, color: "#8b5cf6" },
-  { group: "25–44", value: 28.7, color: "#6366f1" },
-  { group: "45–64", value: 26.3, color: "#3b82f6" },
-  { group: "65–79", value: 13.8, color: "#22d3ee" },
-  { group: "80+",   value: 4.6,  color: "#14b8a6" },
+  { group: "0–14",  value: 15.2, color: "#C17F24" },
+  { group: "15–24", value: 11.4, color: "#E8963A" },
+  { group: "25–44", value: 28.7, color: "#0891B2" },
+  { group: "45–64", value: 26.3, color: "#0D9488" },
+  { group: "65–79", value: 13.8, color: "#059669" },
+  { group: "80+",   value: 4.6,  color: "#B45309" },
 ];
 
 export const migrationData = [
@@ -112,7 +113,7 @@ export const modalSplit = [
   { name: "Public Transit", value: 38, color: "#22d3ee" },
   { name: "Private Car",    value: 34, color: "#3b82f6" },
   { name: "Walking",        value: 17, color: "#10b981" },
-  { name: "Cycling",        value: 9,  color: "#a855f7" },
+  { name: "Cycling",        value: 9,  color: "#0D9488" },
   { name: "Other",          value: 2,  color: "#6b7280" },
 ];
 
@@ -141,7 +142,7 @@ export const energyMix = [
   { name: "Hydro",    value: 14, color: "#3b82f6" },
   { name: "Gas",      value: 24, color: "#f97316" },
   { name: "Coal",     value: 8,  color: "#6b7280" },
-  { name: "Nuclear",  value: 4,  color: "#a855f7" },
+  { name: "Nuclear",  value: 4,  color: "#475569" },
 ];
 
 export const airQualityHistory = [
@@ -189,12 +190,12 @@ export const enrollmentTrends = [
 ];
 
 export const educationAttainment = [
-  { level: "No formal education", value: 2.1,  color: "#6b7280" },
-  { level: "Primary",            value: 8.4,  color: "#6366f1" },
-  { level: "Secondary",          value: 31.2, color: "#8b5cf6" },
-  { level: "Vocational",         value: 22.5, color: "#a855f7" },
-  { level: "Bachelor's",         value: 24.6, color: "#c084fc" },
-  { level: "Master's+",          value: 11.2, color: "#e879f9" },
+  { level: "No formal education", value: 2.1,  color: "#9CA3AF" },
+  { level: "Primary",            value: 8.4,  color: "#0891B2" },
+  { level: "Secondary",          value: 31.2, color: "#0D9488" },
+  { level: "Vocational",         value: 22.5, color: "#C17F24" },
+  { level: "Bachelor's",         value: 24.6, color: "#E8963A" },
+  { level: "Master's+",          value: 11.2, color: "#B45309" },
 ];
 
 // ─── Trends (multi-year compare) ─────────────────────────────────────────────
@@ -233,10 +234,10 @@ export const allDatasets = [
 ];
 
 export const categoryColors = {
-  People:      { bg: "rgba(124,58,237,0.10)",  text: "#6D28D9", border: "rgba(124,58,237,0.25)" },
-  Housing:     { bg: "rgba(193,127,36,0.10)",  text: "#A36318", border: "rgba(193,127,36,0.25)" },
-  Mobility:    { bg: "rgba(8,145,178,0.10)",   text: "#0E7490", border: "rgba(8,145,178,0.25)"  },
-  Environment: { bg: "rgba(5,150,105,0.10)",   text: "#047857", border: "rgba(5,150,105,0.25)"  },
-  Economy:     { bg: "rgba(217,119,6,0.10)",   text: "#B45309", border: "rgba(217,119,6,0.25)"  },
-  Education:   { bg: "rgba(79,70,229,0.10)",   text: "#4338CA", border: "rgba(79,70,229,0.25)"  },
+  People:      { bg: "rgba(13,148,136,0.10)",  text: "#0D9488", border: "rgba(13,148,136,0.25)"  },
+  Housing:     { bg: "rgba(193,127,36,0.10)",  text: "#A36318", border: "rgba(193,127,36,0.25)"  },
+  Mobility:    { bg: "rgba(8,145,178,0.10)",   text: "#0E7490", border: "rgba(8,145,178,0.25)"   },
+  Environment: { bg: "rgba(5,150,105,0.10)",   text: "#047857", border: "rgba(5,150,105,0.25)"   },
+  Economy:     { bg: "rgba(217,119,6,0.10)",   text: "#B45309", border: "rgba(217,119,6,0.25)"   },
+  Education:   { bg: "rgba(29,78,216,0.10)",   text: "#1D4ED8", border: "rgba(29,78,216,0.25)"   },
 };

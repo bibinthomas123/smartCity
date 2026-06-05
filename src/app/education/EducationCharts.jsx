@@ -18,9 +18,9 @@ export default function EducationCharts() {
           <LineWidget
             data={enrollmentTrends}
             lines={[
-              { dataKey: "primary",   color: "#4F46E5", name: "Primary"   },
-              { dataKey: "secondary", color: "#7C3AED", name: "Secondary" },
-              { dataKey: "tertiary",  color: "#6D28D9", name: "Tertiary"  },
+              { dataKey: "primary",   color: "#0891B2", name: "Primary"   },
+              { dataKey: "secondary", color: "#0D9488", name: "Secondary" },
+              { dataKey: "tertiary",  color: "#C17F24", name: "Tertiary"  },
             ]}
             xKey="year"
             height={210}
