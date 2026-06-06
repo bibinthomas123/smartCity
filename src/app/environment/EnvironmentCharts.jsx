@@ -4,9 +4,12 @@ import GlassCard from "@/components/ui/GlassCard";
 import AreaWidget from "@/components/charts/AreaWidget";
 import BarWidget from "@/components/charts/BarWidget";
 import DonutWidget from "@/components/charts/DonutWidget";
-import { co2Emissions, energyMix, airQualityHistory } from "@/lib/mockData";
+import TreemapWidget from "@/components/charts/TreemapWidget";
+import { formatNumber } from "@/lib/utils";
+import { co2Emissions, energyMix, airQualityHistory, wasteByType } from "@/lib/mockData";
 
 const fmtMt = (v) => (v / 1e6).toFixed(2) + "Mt";
+const WASTE_TOTAL = wasteByType.reduce((sum, w) => sum + w.tons, 0);
 const T = ({ children }) => <p className="text-[13px] font-semibold mb-1" style={{ color: "rgba(45,31,15,0.60)" }}>{children}</p>;
 const S = ({ children }) => <p className="text-[11px] mb-5" style={{ color: "rgba(45,31,15,0.35)" }}>{children}</p>;
 
@@ -44,6 +47,15 @@ export default function EnvironmentCharts() {
           xKey="month"
           height={160}
         />
+      </GlassCard>
+
+      <GlassCard className="p-6">
+        <T>Waste by Type</T>
+        <S>
+          Annual collected volume · 2024 ·{" "}
+          {formatNumber(WASTE_TOTAL)} t total
+        </S>
+        <TreemapWidget data={wasteByType} height={300} />
       </GlassCard>
     </div>
   );

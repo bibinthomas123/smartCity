@@ -152,6 +152,62 @@ export const airQualityHistory = [
   { month: "Oct", aqi: 36 }, { month: "Nov", aqi: 44 }, { month: "Dec", aqi: 48 },
 ];
 
+export const wasteByType = [
+  { type: "Organic Waste",       tons: 95000,  color: "#22c55e" },
+  { type: "Paper & Cardboard",   tons: 72000,  color: "#3b82f6" },
+  { type: "Plastic",             tons: 58000,  color: "#f97316" },
+  { type: "Glass",               tons: 42000,  color: "#06b6d4" },
+  { type: "Metal",               tons: 28000,  color: "#64748b" },
+  { type: "Electronic Waste",    tons: 12000,  color: "#8b5cf6" },
+  { type: "Construction Waste",  tons: 105000, color: "#a16207" },
+  { type: "Hazardous Waste",     tons: 8000,   color: "#ef4444" },
+];
+
+export const wasteSortingBins = [
+  {
+    binColor: "Brown",
+    binName: "Organic Waste",
+    icon: "🌱",
+    examples: ["Food scraps", "Fruit peels", "Coffee grounds", "Garden waste", "Leaves"],
+    avoid: ["Plastic", "Glass", "Metal"],
+  },
+  {
+    binColor: "Blue",
+    binName: "Paper & Cardboard",
+    icon: "📄",
+    examples: ["Newspapers", "Magazines", "Cardboard boxes", "Office paper"],
+    avoid: ["Food-stained paper", "Plastic-coated paper"],
+  },
+  {
+    binColor: "Yellow",
+    binName: "Packaging & Plastics",
+    icon: "♻️",
+    examples: ["Plastic bottles", "Yogurt cups", "Food packaging", "Metal cans", "Aluminum foil"],
+    avoid: ["Electronic waste", "Organic waste"],
+  },
+  {
+    binColor: "Green",
+    binName: "Glass",
+    icon: "🍾",
+    examples: ["Glass bottles", "Glass jars"],
+    avoid: ["Ceramics", "Mirrors", "Light bulbs"],
+  },
+  {
+    binColor: "Black",
+    binName: "Residual Waste",
+    icon: "🗑️",
+    examples: ["Dirty tissues", "Ceramics", "Vacuum cleaner bags", "Broken toys"],
+    avoid: ["Recyclables", "Hazardous waste"],
+  },
+  {
+    binColor: "Red",
+    binName: "Hazardous Waste",
+    icon: "⚠️",
+    examples: ["Batteries", "Paint", "Chemicals", "Medicine"],
+    avoid: ["Household waste"],
+  },
+];
+
 // ─── Economy ─────────────────────────────────────────────────────────────────
 export const employmentHistory = [
   { year: "2016", rate: 93.4 }, { year: "2017", rate: 94.1 },
