@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Users, Buildings, Train, Leaf,
   ChartBar, GraduationCap, TrendUp, MagnifyingGlass,
-  Info, Lightning, Gear, CaretLeft, CaretRight, MapPin, House, MapTrifold,
+  Info, CaretLeft, CaretRight, MapPin, House, MapTrifold,
 } from "@phosphor-icons/react";
 
 const NAV = [
@@ -24,24 +25,63 @@ const NAV = [
   { href: "/about",       label: "About",       icon: Info            },
 ];
 
+const SIDEBAR_KEY = "sidebar-collapsed";
+
+const navLinkClass =
+  "relative flex items-center rounded-lg text-[13.5px] font-medium select-none transition-colors duration-150 hover:bg-[rgba(45,31,15,0.06)] hover:text-[rgba(45,31,15,0.80)]";
+
+const iconBtnClass =
+  "flex items-center justify-center rounded-lg transition-colors duration-150 hover:bg-[rgba(45,31,15,0.08)] hover:text-[rgba(45,31,15,0.75)]";
+
+const footerToggleClass =
+  "mt-2 w-full flex items-center justify-center rounded-lg py-2 gap-2 transition-colors duration-150 hover:bg-[rgba(45,31,15,0.08)] hover:text-[rgba(45,31,15,0.75)]";
+
+const floatingTabClass =
+  "absolute top-1/2 -translate-y-1/2 flex items-center justify-center transition-all duration-150 hover:scale-110";
+
+let sidebarListeners = [];
+
+function emitSidebarChange() {
+  sidebarListeners.forEach((listener) => listener());
+}
+
+function subscribeSidebar(onStoreChange) {
+  sidebarListeners.push(onStoreChange);
+  return () => {
+    sidebarListeners = sidebarListeners.filter((listener) => listener !== onStoreChange);
+  };
+}
+
+function getSidebarCollapsed() {
+  try {
+    return localStorage.getItem(SIDEBAR_KEY) === "true";
+  } catch {
+    return false;
+  }
+}
+
+function getSidebarCollapsedServer() {
+  return false;
+}
+
+function setSidebarCollapsed(value) {
+  try {
+    localStorage.setItem(SIDEBAR_KEY, String(value));
+  } catch {}
+  emitSidebarChange();
+}
+
 export default function Sidebar() {
   const pathname = usePathname();
-  const [collapsed, setCollapsed] = useState(false);
+  const collapsed = useSyncExternalStore(
+    subscribeSidebar,
+    getSidebarCollapsed,
+    getSidebarCollapsedServer,
+  );
 
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("sidebar-collapsed");
-      if (saved !== null) setCollapsed(saved === "true");
-    } catch {}
+  const toggle = useCallback(() => {
+    setSidebarCollapsed(!getSidebarCollapsed());
   }, []);
-
-  function toggle() {
-    setCollapsed(prev => {
-      const next = !prev;
-      try { localStorage.setItem("sidebar-collapsed", String(next)); } catch {}
-      return next;
-    });
-  }
 
   return (
     <aside
@@ -54,7 +94,6 @@ export default function Sidebar() {
         transition: "width 0.28s cubic-bezier(0.4,0,0.2,1), min-width 0.28s cubic-bezier(0.4,0,0.2,1)",
       }}
     >
-      {/* ── Logo + top toggle ────────────────────────────────────────── */}
       <div
         className="flex items-center shrink-0 border-b"
         style={{
@@ -65,16 +104,21 @@ export default function Sidebar() {
           transition: "padding 0.28s",
         }}
       >
-        {/* Logo mark + wordmark */}
-        <div
-          className="flex items-center overflow-hidden"
+        <Link
+          href="/"
+          className="flex items-center overflow-hidden min-w-0"
           style={{ gap: collapsed ? 0 : 10, transition: "gap 0.28s" }}
+          title="CityPulse — Magdeburg"
         >
-          <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-            style={{ background: "linear-gradient(135deg, #C17F24, #E8963A)" }}
-          >
-            <Lightning size={16} weight="fill" className="text-white" />
+          <div className="w-9 h-9 shrink-0 flex items-center justify-center">
+            <Image
+              src="/logo.png"
+              alt="CityPulse Magdeburg"
+              width={36}
+              height={36}
+              className="object-contain w-full h-full"
+              priority
+            />
           </div>
           <div
             style={{
@@ -88,26 +132,25 @@ export default function Sidebar() {
             <p className="text-sm font-semibold tracking-tight" style={{ color: "#2D1F0F" }}>CityPulse</p>
             <p className="text-[10px] font-medium tracking-wider uppercase" style={{ color: "rgba(45,31,15,0.40)" }}>Magdeburg</p>
           </div>
-        </div>
+        </Link>
 
-        {/* Top toggle button */}
-        <button
-          onClick={toggle}
-          className="flex items-center justify-center rounded-lg transition-colors duration-150
-                     hover:bg-[rgba(45,31,15,0.08)] hover:text-[rgba(45,31,15,0.75)]"
-          style={{
-            width: 28,
-            height: 28,
-            flexShrink: 0,
-            color: "rgba(45,31,15,0.40)",
-          }}
-          title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-        >
-          {collapsed ? <CaretRight size={14} weight="bold" /> : <CaretLeft size={14} weight="bold" />}
-        </button>
+        {!collapsed && (
+          <button
+            onClick={toggle}
+            className={iconBtnClass}
+            style={{
+              width: 28,
+              height: 28,
+              flexShrink: 0,
+              color: "rgba(45,31,15,0.40)",
+            }}
+            title="Collapse sidebar"
+          >
+            <CaretLeft size={14} weight="bold" />
+          </button>
+        )}
       </div>
 
-      {/* ── Nav ──────────────────────────────────────────────────────── */}
       <nav
         className="flex-1 overflow-y-auto"
         style={{ padding: collapsed ? "14px 8px" : "14px 10px" }}
@@ -130,9 +173,7 @@ export default function Sidebar() {
                 key={href}
                 href={href}
                 title={collapsed ? label : undefined}
-                className="relative flex items-center rounded-lg text-[13.5px] font-medium select-none
-                           transition-colors duration-150
-                           hover:bg-[rgba(45,31,15,0.06)] hover:text-[rgba(45,31,15,0.80)]"
+                className={navLinkClass}
                 style={{
                   gap: collapsed ? 0 : 10,
                   padding: collapsed ? "10px 0" : "9px 10px",
@@ -170,7 +211,6 @@ export default function Sidebar() {
         </div>
       </nav>
 
-      {/* ── Footer ───────────────────────────────────────────────────── */}
       <div
         className="border-t shrink-0"
         style={{
@@ -178,36 +218,6 @@ export default function Sidebar() {
           padding: collapsed ? "10px 8px" : "10px 10px",
         }}
       >
-        {/* Settings link */}
-        {/* <Link
-          href="/about"
-          title={collapsed ? "About" : undefined}
-          className="flex items-center rounded-lg text-[13px] font-medium
-                     transition-colors duration-150
-                     hover:bg-[rgba(45,31,15,0.06)] hover:text-[rgba(45,31,15,0.65)]"
-          style={{
-            gap: collapsed ? 0 : 10,
-            padding: collapsed ? "9px 0" : "9px 10px",
-            justifyContent: collapsed ? "center" : "flex-start",
-            color: "rgba(45,31,15,0.40)",
-          }}
-        >
-          <Gear size={16} className="shrink-0" />
-          <span
-            style={{
-              overflow: "hidden",
-              maxWidth: collapsed ? 0 : 160,
-              opacity: collapsed ? 0 : 1,
-              transition: "max-width 0.28s cubic-bezier(0.4,0,0.2,1), opacity 0.18s",
-              whiteSpace: "nowrap",
-              display: "inline-block",
-            }}
-          >
-            Settings
-          </span>
-        </Link> */}
-
-        {/* Version info */}
         <div
           style={{
             overflow: "hidden",
@@ -222,12 +232,9 @@ export default function Sidebar() {
           <p className="text-[11px] font-medium" style={{ color: "rgba(45,31,15,0.42)" }}>Dec 2024 · v2.4.0</p>
         </div>
 
-        {/* Collapse toggle button */}
         <button
           onClick={toggle}
-          className="mt-2 w-full flex items-center justify-center rounded-lg py-2 gap-2
-                     transition-colors duration-150
-                     hover:bg-[rgba(45,31,15,0.08)] hover:text-[rgba(45,31,15,0.75)]"
+          className={footerToggleClass}
           style={{ color: "rgba(45,31,15,0.38)" }}
           title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
@@ -249,12 +256,10 @@ export default function Sidebar() {
         </button>
       </div>
 
-      {/* ── Floating expand tab (visible only when collapsed) ────────── */}
       {collapsed && (
         <button
           onClick={toggle}
-          className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center
-                     transition-all duration-150 hover:scale-110"
+          className={floatingTabClass}
           style={{
             right: -14,
             width: 28,
