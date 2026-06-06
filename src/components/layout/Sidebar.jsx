@@ -6,12 +6,13 @@ import { usePathname } from "next/navigation";
 import {
   Users, Buildings, Train, Leaf,
   ChartBar, GraduationCap, TrendUp, MagnifyingGlass,
-  Info, Lightning, Gear, CaretLeft, CaretRight, MapPin, House,
+  Info, Lightning, Gear, CaretLeft, CaretRight, MapPin, House, MapTrifold,
 } from "@phosphor-icons/react";
 
 const NAV = [
   { href: "/",            label: "Home",        icon: MapPin          },
   { href: "/overview",    label: "Overview",    icon: ChartBar        },
+  { href: "/map",         label: "City Map",    icon: MapTrifold      },
   { href: "/people",      label: "People",      icon: Users           },
   { href: "/housing",     label: "Housing",     icon: Buildings       },
   { href: "/mobility",    label: "Mobility",    icon: Train           },
