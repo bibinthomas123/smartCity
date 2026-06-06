@@ -1,5 +1,7 @@
-﻿"use client";
+"use client";
 
+import { useLang } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 import GlassCard from "@/components/ui/GlassCard";
 import AreaWidget from "@/components/charts/AreaWidget";
 import BarWidget from "@/components/charts/BarWidget";
@@ -20,12 +22,15 @@ const employmentChartData = realEmployment.map(r => ({
 }));
 
 export default function EconomyCharts() {
+  const { lang } = useLang();
+  const tr = translations[lang].charts.economy;
+
   return (
     <div className="space-y-6">
       <div className="grid lg:grid-cols-2 gap-6">
         <GlassCard className="p-6">
-          <T>Insured Employees at Workplace</T>
-          <S>Sozialversicherungspflichtig Beschaeftigte - 2016-2023</S>
+          <T>{tr.empTitle}</T>
+          <S>{tr.empSub}</S>
           <AreaWidget
             data={employmentChartData}
             dataKey="total"
@@ -38,11 +43,11 @@ export default function EconomyCharts() {
         </GlassCard>
 
         <GlassCard className="p-6">
-          <T>GDP Growth</T>
-          <S>Annual % change - 2016-2024</S>
+          <T>{tr.gdpTitle}</T>
+          <S>{tr.gdpSub}</S>
           <BarWidget
             data={gdpGrowthHistory}
-            bars={[{ dataKey: "growth", color: "#2563EB", name: "GDP Growth %" }]}
+            bars={[{ dataKey: "growth", color: "#2563EB", name: tr.gdpGrowth }]}
             xKey="year"
             height={200}
             unit="%"
@@ -51,14 +56,14 @@ export default function EconomyCharts() {
       </div>
 
       <GlassCard className="p-6">
-        <T>Employment by Group</T>
-        <S>Male - Female - Foreign nationals - 2016-2023</S>
+        <T>{tr.grpTitle}</T>
+        <S>{tr.grpSub}</S>
         <LineWidget
           data={employmentChartData}
           lines={[
-            { dataKey: "male",    color: "#06B6D4", name: "Male"    },
-            { dataKey: "female",  color: "#2563EB", name: "Female"  },
-            { dataKey: "foreign", color: "#EF4444", name: "Foreign" },
+            { dataKey: "male",    color: "#06B6D4", name: tr.male    },
+            { dataKey: "female",  color: "#2563EB", name: tr.female  },
+            { dataKey: "foreign", color: "#EF4444", name: tr.foreign },
           ]}
           xKey="year"
           height={200}
@@ -68,13 +73,13 @@ export default function EconomyCharts() {
       </GlassCard>
 
       <GlassCard className="p-6">
-        <T>Business Activity</T>
-        <S>Registrations vs closures - 2019-2024</S>
+        <T>{tr.bizTitle}</T>
+        <S>{tr.bizSub}</S>
         <BarWidget
           data={businessActivity}
           bars={[
-            { dataKey: "registered", color: "#F59E0B", name: "Registered" },
-            { dataKey: "closed",     color: "#EF4444", name: "Closed"     },
+            { dataKey: "registered", color: "#F59E0B", name: tr.registered },
+            { dataKey: "closed",     color: "#EF4444", name: tr.closed     },
           ]}
           xKey="year"
           height={200}

@@ -1,5 +1,7 @@
-﻿"use client";
+"use client";
 
+import { useLang } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 import GlassCard from "@/components/ui/GlassCard";
 import AreaWidget from "@/components/charts/AreaWidget";
 import BarWidget from "@/components/charts/BarWidget";
@@ -13,11 +15,14 @@ const T = ({ children }) => <p className="text-[13px] font-semibold mb-1" style=
 const S = ({ children }) => <p className="text-[11px] mb-5" style={{ color: "rgba(15,23,42,0.40)" }}>{children}</p>;
 
 export default function PeopleCharts() {
+  const { lang } = useLang();
+  const tr = translations[lang].charts.people;
+
   return (
     <div className="space-y-6">
       <GlassCard className="p-6">
-        <T>Population Trend</T>
-        <S>Hauptwohnsitz residents (December snapshot) - 1993-2024</S>
+        <T>{tr.popTitle}</T>
+        <S>{tr.popSub}</S>
         <AreaWidget
           data={realPopulation}
           dataKey="total"
@@ -31,13 +36,13 @@ export default function PeopleCharts() {
 
       <div className="grid lg:grid-cols-2 gap-6">
         <GlassCard className="p-6">
-          <T>Gender Split</T>
-          <S>Male vs Female - 1993-2024</S>
+          <T>{tr.genderTitle}</T>
+          <S>{tr.genderSub}</S>
           <LineWidget
             data={realPopulation}
             lines={[
-              { dataKey: "male",   color: "#06B6D4", name: "Male"   },
-              { dataKey: "female", color: "#2563EB", name: "Female" },
+              { dataKey: "male",   color: "#06B6D4", name: tr.male   },
+              { dataKey: "female", color: "#2563EB", name: tr.female },
             ]}
             xKey="year"
             height={200}
@@ -47,13 +52,13 @@ export default function PeopleCharts() {
         </GlassCard>
 
         <GlassCard className="p-6">
-          <T>Births &amp; Deaths</T>
-          <S>Annual counts - 2000-2024</S>
+          <T>{tr.birthTitle}</T>
+          <S>{tr.birthSub}</S>
           <BarWidget
             data={realBirthsDeaths}
             bars={[
-              { dataKey: "births", color: "#10B981", name: "Births" },
-              { dataKey: "deaths", color: "#EF4444", name: "Deaths" },
+              { dataKey: "births", color: "#10B981", name: tr.births },
+              { dataKey: "deaths", color: "#EF4444", name: tr.deaths },
             ]}
             xKey="year"
             height={200}

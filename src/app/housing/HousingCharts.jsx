@@ -1,5 +1,7 @@
-﻿"use client";
+"use client";
 
+import { useLang } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 import GlassCard from "@/components/ui/GlassCard";
 import BarWidget from "@/components/charts/BarWidget";
 import AreaWidget from "@/components/charts/AreaWidget";
@@ -11,18 +13,21 @@ const T = ({ children }) => <p className="text-[13px] font-semibold mb-1" style=
 const S = ({ children }) => <p className="text-[11px] mb-5" style={{ color: "rgba(15,23,42,0.40)" }}>{children}</p>;
 
 export default function HousingCharts() {
+  const { lang } = useLang();
+  const tr = translations[lang].charts.housing;
+
   return (
     <div className="space-y-6">
       <div className="grid lg:grid-cols-3 gap-6">
         <GlassCard className="p-6">
-          <T>Housing Mix</T>
-          <p className="text-[11px] mb-2" style={{ color: "rgba(15,23,42,0.40)" }}>By type - 2024</p>
+          <T>{tr.mixTitle}</T>
+          <p className="text-[11px] mb-2" style={{ color: "rgba(15,23,42,0.40)" }}>{tr.mixSub}</p>
           <DonutWidget data={housingByType} height={300} innerRadius={60} outerRadius={95} />
         </GlassCard>
 
         <GlassCard className="p-6 lg:col-span-2">
-          <T>Average Net Rent per m&sup2;</T>
-          <S>Nettokaltmiete (Mietspiegel) - EUR/m&sup2; - 2012-2024</S>
+          <T>{tr.rentTitle}</T>
+          <S>{tr.rentSub}</S>
           <AreaWidget
             data={realRentPerSqm}
             dataKey="avgPerSqm"
@@ -36,13 +41,13 @@ export default function HousingCharts() {
       </div>
 
       <GlassCard className="p-6">
-        <T>Construction Activity</T>
-        <S>Permits issued &amp; completions - 2018-2024</S>
+        <T>{tr.conTitle}</T>
+        <S>{tr.conSub}</S>
         <BarWidget
           data={constructionActivity}
           bars={[
-            { dataKey: "permits",     color: "#F59E0B", name: "Permits Issued" },
-            { dataKey: "completions", color: "#EF4444", name: "Completions"    },
+            { dataKey: "permits",     color: "#F59E0B", name: tr.permits     },
+            { dataKey: "completions", color: "#EF4444", name: tr.completions },
           ]}
           xKey="year"
           height={220}
