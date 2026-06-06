@@ -1,0 +1,48 @@
+export const translations = {
+  en: {
+    nav: {
+      home:        "Home",
+      overview:    "Overview",
+      map:         "City Map",
+      people:      "People",
+      housing:     "Housing",
+      mobility:    "Mobility",
+      environment: "Environment",
+      economy:     "Economy",
+      education:   "Education",
+      trends:      "Trends",
+      explorer:    "Explorer",
+      about:       "About",
+    },
+    ui: {
+      explore:     "Explore",
+      collapse:    "Collapse",
+      expand:      "Expand",
+      language:    "Language",
+      refreshed:   "Data last refreshed",
+    },
+  },
+  de: {
+    nav: {
+      home:        "Startseite",
+      overview:    "Übersicht",
+      map:         "Stadtplan",
+      people:      "Bevölkerung",
+      housing:     "Wohnen",
+      mobility:    "Mobilität",
+      environment: "Umwelt",
+      economy:     "Wirtschaft",
+      education:   "Bildung",
+      trends:      "Trends",
+      explorer:    "Explorer",
+      about:       "Über uns",
+    },
+    ui: {
+      explore:     "Erkunden",
+      collapse:    "Einklappen",
+      expand:      "Ausklappen",
+      language:    "Sprache",
+      refreshed:   "Zuletzt aktualisiert",
+    },
+  },
+};

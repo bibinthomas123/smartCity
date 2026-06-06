@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import GlassCard from "@/components/ui/GlassCard";
 import AreaWidget from "@/components/charts/AreaWidget";
@@ -11,8 +11,8 @@ export default function OverviewCharts() {
   return (
     <section className="grid lg:grid-cols-2 gap-6">
       <GlassCard className="p-5">
-        <p className="text-[13px] font-semibold mb-1" style={{ color: "rgba(45,31,15,0.60)" }}>Population Growth</p>
-        <p className="text-[11px] mb-4" style={{ color: "rgba(45,31,15,0.35)" }}>2010 – 2024</p>
+        <p className="text-[13px] font-semibold mb-1" style={{ color: "rgba(15,23,42,0.65)" }}>Population Growth</p>
+        <p className="text-[11px] mb-4" style={{ color: "rgba(15,23,42,0.36)" }}>2010 â€“ 2024</p>
         <AreaWidget
           data={populationHistory}
           dataKey="total"
@@ -25,8 +25,8 @@ export default function OverviewCharts() {
       </GlassCard>
 
       <GlassCard className="p-5">
-        <p className="text-[13px] font-semibold mb-1" style={{ color: "rgba(45,31,15,0.60)" }}>Employment Rate</p>
-        <p className="text-[11px] mb-4" style={{ color: "rgba(45,31,15,0.35)" }}>2016 – 2024 · %</p>
+        <p className="text-[13px] font-semibold mb-1" style={{ color: "rgba(15,23,42,0.65)" }}>Employment Rate</p>
+        <p className="text-[11px] mb-4" style={{ color: "rgba(15,23,42,0.36)" }}>2016 â€“ 2024 Â· %</p>
         <AreaWidget
           data={employmentHistory}
           dataKey="rate"
@@ -40,3 +40,4 @@ export default function OverviewCharts() {
     </section>
   );
 }
+

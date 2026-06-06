@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import GlassCard from "@/components/ui/GlassCard";
@@ -23,9 +23,9 @@ function TagList({ items, variant }) {
           key={item}
           className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11.5px] font-medium"
           style={{
-            background: isAvoid ? "rgba(220,38,38,0.08)" : "rgba(5,150,105,0.10)",
-            border: isAvoid ? "1px solid rgba(220,38,38,0.18)" : "1px solid rgba(5,150,105,0.20)",
-            color: isAvoid ? "#B91C1C" : "#047857",
+            background: isAvoid ? "rgba(220,38,38,0.08)" : "rgba(16,185,129,0.10)",
+            border: isAvoid ? "1px solid rgba(220,38,38,0.18)" : "1px solid rgba(16,185,129,0.20)",
+            color: isAvoid ? "#B91C1C" : "#059669",
           }}
         >
           {isAvoid ? <X size={11} weight="bold" /> : <Check size={11} weight="bold" />}
@@ -46,16 +46,16 @@ export default function WasteSortingGuide() {
       <div className="flex items-start gap-3">
         <div
           className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-          style={{ background: "rgba(5,150,105,0.12)", border: "1px solid rgba(5,150,105,0.22)" }}
+          style={{ background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.22)" }}
         >
-          <Recycle size={18} weight="fill" style={{ color: "#059669" }} />
+          <Recycle size={18} weight="fill" style={{ color: "#10B981" }} />
         </div>
         <div>
-          <h2 className="text-[15px] font-semibold" style={{ color: "#2D1F0F" }}>
+          <h2 className="text-[15px] font-semibold" style={{ color: "#0F172A" }}>
             Waste Sorting Guide
           </h2>
-          <p className="text-[12.5px] mt-1 leading-relaxed max-w-2xl" style={{ color: "rgba(45,31,15,0.52)" }}>
-            Which bin does it go in? Tap a colour below to see what belongs — and what does not — for Magdeburg residents.
+          <p className="text-[12.5px] mt-1 leading-relaxed max-w-2xl" style={{ color: "rgba(15,23,42,0.56)" }}>
+            Which bin does it go in? Tap a colour below to see what belongs â€” and what does not â€” for Magdeburg residents.
           </p>
         </div>
       </div>
@@ -73,8 +73,8 @@ export default function WasteSortingGuide() {
                   onClick={() => setActive(i)}
                   className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-left shrink-0 transition-all duration-150 min-w-[200px] lg:min-w-0"
                   style={{
-                    background: selected ? s.bg : "rgba(45,31,15,0.03)",
-                    border: selected ? `1.5px solid ${s.border}` : "1.5px solid rgba(160,130,90,0.16)",
+                    background: selected ? s.bg : "rgba(15,23,42,0.03)",
+                    border: selected ? `1.5px solid ${s.border}` : "1.5px solid rgba(148,163,184,0.16)",
                     boxShadow: selected ? `0 0 0 1px ${s.fill}18` : "none",
                   }}
                 >
@@ -84,8 +84,8 @@ export default function WasteSortingGuide() {
                   />
                   <span className="text-lg leading-none">{b.icon}</span>
                   <div className="min-w-0">
-                    <p className="text-[12px] font-semibold truncate" style={{ color: "#2D1F0F" }}>{b.binName}</p>
-                    <p className="text-[10px] mt-0.5" style={{ color: "rgba(45,31,15,0.42)" }}>{b.binColor} bin</p>
+                    <p className="text-[12px] font-semibold truncate" style={{ color: "#0F172A" }}>{b.binName}</p>
+                    <p className="text-[10px] mt-0.5" style={{ color: "rgba(15,23,42,0.44)" }}>{b.binColor} bin</p>
                   </div>
                 </button>
               );
@@ -99,21 +99,21 @@ export default function WasteSortingGuide() {
             <div className="flex items-center gap-3 mb-5">
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-                style={{ background: "rgba(255,249,235,0.85)", border: `2px solid ${style.fill}` }}
+                style={{ background: "rgba(255,255,255,0.88)", border: `2px solid ${style.fill}` }}
               >
                 {bin.icon}
               </div>
               <div>
-                <p className="text-[16px] font-bold" style={{ color: "#2D1F0F" }}>{bin.binName}</p>
+                <p className="text-[16px] font-bold" style={{ color: "#0F172A" }}>{bin.binName}</p>
                 <p className="text-[12px] mt-0.5 font-medium" style={{ color: style.fill }}>
-                  {bin.binColor} bin · Magdeburg
+                  {bin.binColor} bin Â· Magdeburg
                 </p>
               </div>
             </div>
 
             <div className="space-y-4">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-2.5 flex items-center gap-1.5" style={{ color: "#059669" }}>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-2.5 flex items-center gap-1.5" style={{ color: "#10B981" }}>
                   <Check size={13} weight="bold" /> What goes in
                 </p>
                 <TagList items={bin.examples} variant="examples" />
@@ -130,16 +130,17 @@ export default function WasteSortingGuide() {
 
         <div
           className="mt-5 flex items-start gap-2.5 px-4 py-3 rounded-xl"
-          style={{ background: "rgba(45,31,15,0.04)", border: "1px solid rgba(160,130,90,0.16)" }}
+          style={{ background: "rgba(15,23,42,0.04)", border: "1px solid rgba(148,163,184,0.16)" }}
         >
-          <Info size={16} className="shrink-0 mt-0.5" style={{ color: "rgba(45,31,15,0.45)" }} />
-          <p className="text-[11.5px] leading-relaxed" style={{ color: "rgba(45,31,15,0.52)" }}>
-            Hazardous items like batteries and paint must be taken to a collection point — never placed in household bins.
+          <Info size={16} className="shrink-0 mt-0.5" style={{ color: "rgba(15,23,42,0.48)" }} />
+          <p className="text-[11.5px] leading-relaxed" style={{ color: "rgba(15,23,42,0.56)" }}>
+            Hazardous items like batteries and paint must be taken to a collection point â€” never placed in household bins.
             When unsure, check with{" "}
-            <span className="font-semibold" style={{ color: "#059669" }}>Magdeburg Abfallwirtschaft</span>.
+            <span className="font-semibold" style={{ color: "#10B981" }}>Magdeburg Abfallwirtschaft</span>.
           </p>
         </div>
       </GlassCard>
     </section>
   );
 }
+

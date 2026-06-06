@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import dynamic from "next/dynamic";
 
@@ -12,9 +12,9 @@ const CityMap = dynamic(() => import("@/components/map/CityMap"), {
       <div className="text-center">
         <div
           className="w-10 h-10 rounded-full border-2 border-t-transparent animate-spin mx-auto mb-3"
-          style={{ borderColor: "rgba(193,127,36,0.40)", borderTopColor: "transparent" }}
+          style={{ borderColor: "rgba(37,99,235,0.40)", borderTopColor: "transparent" }}
         />
-        <p className="text-[13px]" style={{ color: "rgba(45,31,15,0.45)" }}>Loading city map…</p>
+        <p className="text-[13px]" style={{ color: "rgba(15,23,42,0.48)" }}>Loading city mapâ€¦</p>
       </div>
     </div>
   ),
@@ -23,3 +23,4 @@ const CityMap = dynamic(() => import("@/components/map/CityMap"), {
 export default function MapWrapper() {
   return <CityMap />;
 }
+

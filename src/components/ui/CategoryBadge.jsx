@@ -1,10 +1,10 @@
-import { categoryColors } from "@/lib/mockData";
+﻿import { categoryColors } from "@/lib/mockData";
 
 export default function CategoryBadge({ category, size = "sm" }) {
   const scheme = categoryColors[category] ?? {
-    bg: "rgba(160,130,90,0.12)",
-    text: "rgba(45,31,15,0.60)",
-    border: "rgba(160,130,90,0.25)",
+    bg: "rgba(148,163,184,0.12)",
+    text: "rgba(15,23,42,0.65)",
+    border: "rgba(148,163,184,0.22)",
   };
   const px = size === "sm" ? "px-2 py-0.5 text-[10px]" : "px-3 py-1 text-xs";
 
@@ -21,3 +21,4 @@ export default function CategoryBadge({ category, size = "sm" }) {
     </span>
   );
 }
+

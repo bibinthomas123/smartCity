@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   ResponsiveContainer, BarChart, Bar,
@@ -6,13 +6,13 @@ import {
 } from "recharts";
 
 const TOOLTIP_STYLE = {
-  backgroundColor: "#FBF7EE",
-  border: "1px solid rgba(160,130,90,0.28)",
+  backgroundColor: "#FFFFFF",
+  border: "1px solid rgba(148,163,184,0.25)",
   borderRadius: "10px",
   fontSize: "12px",
-  color: "#2D1F0F",
+  color: "#0F172A",
   padding: "8px 12px",
-  boxShadow: "0 4px 12px rgba(160,130,90,0.14)",
+  boxShadow: "0 4px 16px rgba(15,23,42,0.10)",
 };
 
 export default function BarWidget({
@@ -28,15 +28,15 @@ export default function BarWidget({
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart data={data} margin={{ top: 4, right: 4, left: 0, bottom: 0 }} barGap={4} barCategoryGap="30%">
-        <CartesianGrid strokeDasharray="3 3" stroke="rgba(160,130,90,0.14)" vertical={false} />
+        <CartesianGrid strokeDasharray="3 3" stroke="rgba(148,163,184,0.13)" vertical={false} />
         <XAxis
           dataKey={xKey}
-          tick={{ fill: "rgba(45,31,15,0.38)", fontSize: 11 }}
+          tick={{ fill: "rgba(15,23,42,0.40)", fontSize: 11 }}
           tickLine={false}
           axisLine={false}
         />
         <YAxis
-          tick={{ fill: "rgba(45,31,15,0.38)", fontSize: 11 }}
+          tick={{ fill: "rgba(15,23,42,0.40)", fontSize: 11 }}
           tickLine={false}
           axisLine={false}
           width={46}
@@ -44,7 +44,7 @@ export default function BarWidget({
         />
         <Tooltip
           contentStyle={TOOLTIP_STYLE}
-          cursor={{ fill: "rgba(160,130,90,0.07)" }}
+          cursor={{ fill: "rgba(148,163,184,0.08)" }}
           formatter={(v, name) => [formatter ? formatter(v) : v + unit, name]}
         />
         {bars.map(({ dataKey, color, name }) => (
@@ -62,3 +62,5 @@ export default function BarWidget({
     </ResponsiveContainer>
   );
 }
+
+

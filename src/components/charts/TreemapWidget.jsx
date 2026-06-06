@@ -1,16 +1,16 @@
-"use client";
+﻿"use client";
 
 import { ResponsiveContainer, Treemap, Tooltip } from "recharts";
 import { formatNumber } from "@/lib/utils";
 
 const TOOLTIP_STYLE = {
-  backgroundColor: "#FBF7EE",
-  border: "1px solid rgba(160,130,90,0.28)",
+  backgroundColor: "#FFFFFF",
+  border: "1px solid rgba(148,163,184,0.24)",
   borderRadius: "10px",
   fontSize: "12px",
-  color: "#2D1F0F",
+  color: "#0F172A",
   padding: "8px 12px",
-  boxShadow: "0 4px 12px rgba(160,130,90,0.14)",
+  boxShadow: "0 4px 12px rgba(148,163,184,0.13)",
 };
 
 function textColor(hex) {
@@ -18,7 +18,7 @@ function textColor(hex) {
   const g = parseInt(hex.slice(3, 5), 16);
   const b = parseInt(hex.slice(5, 7), 16);
   const l = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-  return l > 0.55 ? "#2D1F0F" : "#FFFFFF";
+  return l > 0.55 ? "#0F172A" : "#FFFFFF";
 }
 
 function TreemapCell(props) {
@@ -42,7 +42,7 @@ function TreemapCell(props) {
         width={width}
         height={height}
         fill={color}
-        stroke="#FBF7EE"
+        stroke="#FFFFFF"
         strokeWidth={2}
         rx={6}
       />
@@ -104,7 +104,7 @@ export default function TreemapWidget({
         data={treeData}
         dataKey="tons"
         aspectRatio={4 / 3}
-        stroke="#FBF7EE"
+        stroke="#FFFFFF"
         content={TreemapCell}
       >
         <Tooltip
@@ -118,3 +118,4 @@ export default function TreemapWidget({
     </ResponsiveContainer>
   );
 }
+

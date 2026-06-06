@@ -1,18 +1,18 @@
-
-// ─── Overview ────────────────────────────────────────────────────────────────
+﻿
+// â”€â”€â”€ Overview â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const cityHealthScore = 84;
 
 export const kpis = [
   { id: "pop",  label: "Population",       value: "1.89M", raw: 1890000, unit: "",    change: +1.2, changeType: "up",   color: "#3b82f6", sparkData: [1.72,1.74,1.77,1.79,1.80,1.83,1.86,1.89] },
-  { id: "gdp",  label: "GDP Growth",        value: "3.4%",  raw: 3.4,    unit: "%",   change: +0.8, changeType: "up",   color: "#E8963A", sparkData: [1.8,2.1,1.9,2.4,2.8,3.0,2.6,3.4] },
+  { id: "gdp",  label: "GDP Growth",        value: "3.4%",  raw: 3.4,    unit: "%",   change: +0.8, changeType: "up",   color: "#3B82F6", sparkData: [1.8,2.1,1.9,2.4,2.8,3.0,2.6,3.4] },
   { id: "emp",  label: "Employment Rate",   value: "97.2%", raw: 97.2,   unit: "%",   change: +0.3, changeType: "up",   color: "#10b981", sparkData: [95.1,95.4,95.9,96.2,96.5,96.8,97.0,97.2] },
   { id: "sus",  label: "Sustainability",    value: "72/100",raw: 72,     unit: "pts", change: +5,   changeType: "up",   color: "#f59e0b", sparkData: [55,58,60,62,63,66,68,72] },
 ];
 
 export const trendingInsights = [
   { title: "Construction Permits Surge",     body: "New building permits rose 23% in Q3 2024, driven by residential expansion in the northern districts.", category: "Housing",     badge: "#f59e0b" },
-  { title: "Transit Ridership Record High",  body: "Public transport carried 2.3M monthly riders in October — the highest figure since tracking began.", category: "Mobility",    badge: "#22d3ee" },
-  { title: "CO₂ Emissions Down 12%",         body: "Year-over-year greenhouse gas emissions fell 12%, accelerated by solar capacity expansion.", category: "Environment", badge: "#10b981" },
+  { title: "Transit Ridership Record High",  body: "Public transport carried 2.3M monthly riders in October â€” the highest figure since tracking began.", category: "Mobility",    badge: "#22d3ee" },
+  { title: "COâ‚‚ Emissions Down 12%",         body: "Year-over-year greenhouse gas emissions fell 12%, accelerated by solar capacity expansion.", category: "Environment", badge: "#10b981" },
 ];
 
 export const recentActivity = [
@@ -24,13 +24,13 @@ export const recentActivity = [
 ];
 
 export const featuredDatasets = [
-  { slug: "population-trend",   label: "Population Trend 2000–2024",  category: "People",      rows: 24, lastUpdated: "Dec 2024" },
+  { slug: "population-trend",   label: "Population Trend 2000â€“2024",  category: "People",      rows: 24, lastUpdated: "Dec 2024" },
   { slug: "housing-stock",      label: "Housing Stock by Type",        category: "Housing",     rows: 8,  lastUpdated: "Nov 2024" },
   { slug: "air-quality-annual", label: "Annual Air Quality Index",     category: "Environment", rows: 15, lastUpdated: "Nov 2024" },
-  { slug: "employment-rate",    label: "Employment Rate 2010–2024",    category: "Economy",     rows: 14, lastUpdated: "Oct 2024" },
+  { slug: "employment-rate",    label: "Employment Rate 2010â€“2024",    category: "Economy",     rows: 14, lastUpdated: "Oct 2024" },
 ];
 
-// ─── People ──────────────────────────────────────────────────────────────────
+// â”€â”€â”€ People â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const populationHistory = [
   { year: "2010", total: 1620000, male: 788000, female: 832000 },
   { year: "2011", total: 1645000, male: 802000, female: 843000 },
@@ -50,12 +50,12 @@ export const populationHistory = [
 ];
 
 export const ageGroups = [
-  { group: "0–14",  value: 15.2, color: "#C17F24" },
-  { group: "15–24", value: 11.4, color: "#E8963A" },
-  { group: "25–44", value: 28.7, color: "#0891B2" },
-  { group: "45–64", value: 26.3, color: "#0D9488" },
-  { group: "65–79", value: 13.8, color: "#059669" },
-  { group: "80+",   value: 4.6,  color: "#B45309" },
+  { group: "0â€“14",  value: 15.2, color: "#2563EB" },
+  { group: "15â€“24", value: 11.4, color: "#3B82F6" },
+  { group: "25â€“44", value: 28.7, color: "#06B6D4" },
+  { group: "45â€“64", value: 26.3, color: "#10B981" },
+  { group: "65â€“79", value: 13.8, color: "#10B981" },
+  { group: "80+",   value: 4.6,  color: "#2563EB" },
 ];
 
 export const migrationData = [
@@ -68,7 +68,7 @@ export const migrationData = [
   { year: "2024", arrivals: 54000, departures: 36000 },
 ];
 
-// ─── Housing ─────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Housing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const housingByType = [
   { name: "Apartments",     value: 58.4, color: "#f59e0b" },
   { name: "Single-family",  value: 22.1, color: "#f97316" },
@@ -99,7 +99,7 @@ export const rentTrend = [
   { year: "2024", avgRent: 1192 },
 ];
 
-// ─── Mobility ────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Mobility â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const transitRidership = [
   { month: "Jan", riders: 1920000 }, { month: "Feb", riders: 1840000 },
   { month: "Mar", riders: 2100000 }, { month: "Apr", riders: 2230000 },
@@ -113,7 +113,7 @@ export const modalSplit = [
   { name: "Public Transit", value: 38, color: "#22d3ee" },
   { name: "Private Car",    value: 34, color: "#3b82f6" },
   { name: "Walking",        value: 17, color: "#10b981" },
-  { name: "Cycling",        value: 9,  color: "#0D9488" },
+  { name: "Cycling",        value: 9,  color: "#10B981" },
   { name: "Other",          value: 2,  color: "#6b7280" },
 ];
 
@@ -127,7 +127,7 @@ export const congestionIndex = [
   { hour: "23:00", index: 12 },
 ];
 
-// ─── Environment ─────────────────────────────────────────────────────────────
+// â”€â”€â”€ Environment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const co2Emissions = [
   { year: "2015", tons: 3800000 }, { year: "2016", tons: 3720000 },
   { year: "2017", tons: 3650000 }, { year: "2018", tons: 3580000 },
@@ -167,48 +167,48 @@ export const wasteSortingBins = [
   {
     binColor: "Brown",
     binName: "Organic Waste",
-    icon: "🌱",
+    icon: "ðŸŒ±",
     examples: ["Food scraps", "Fruit peels", "Coffee grounds", "Garden waste", "Leaves"],
     avoid: ["Plastic", "Glass", "Metal"],
   },
   {
     binColor: "Blue",
     binName: "Paper & Cardboard",
-    icon: "📄",
+    icon: "ðŸ“„",
     examples: ["Newspapers", "Magazines", "Cardboard boxes", "Office paper"],
     avoid: ["Food-stained paper", "Plastic-coated paper"],
   },
   {
     binColor: "Yellow",
     binName: "Packaging & Plastics",
-    icon: "♻️",
+    icon: "â™»ï¸",
     examples: ["Plastic bottles", "Yogurt cups", "Food packaging", "Metal cans", "Aluminum foil"],
     avoid: ["Electronic waste", "Organic waste"],
   },
   {
     binColor: "Green",
     binName: "Glass",
-    icon: "🍾",
+    icon: "ðŸ¾",
     examples: ["Glass bottles", "Glass jars"],
     avoid: ["Ceramics", "Mirrors", "Light bulbs"],
   },
   {
     binColor: "Black",
     binName: "Residual Waste",
-    icon: "🗑️",
+    icon: "ðŸ—‘ï¸",
     examples: ["Dirty tissues", "Ceramics", "Vacuum cleaner bags", "Broken toys"],
     avoid: ["Recyclables", "Hazardous waste"],
   },
   {
     binColor: "Red",
     binName: "Hazardous Waste",
-    icon: "⚠️",
+    icon: "âš ï¸",
     examples: ["Batteries", "Paint", "Chemicals", "Medicine"],
     avoid: ["Household waste"],
   },
 ];
 
-// ─── Economy ─────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Economy â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const employmentHistory = [
   { year: "2016", rate: 93.4 }, { year: "2017", rate: 94.1 },
   { year: "2018", rate: 94.8 }, { year: "2019", rate: 95.6 },
@@ -234,7 +234,7 @@ export const businessActivity = [
   { year: "2024", registered: 6100, closed: 3200 },
 ];
 
-// ─── Education ───────────────────────────────────────────────────────────────
+// â”€â”€â”€ Education â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const enrollmentTrends = [
   { year: "2018", primary: 142000, secondary: 98000, tertiary: 62000 },
   { year: "2019", primary: 145000, secondary: 100000, tertiary: 65000 },
@@ -247,14 +247,14 @@ export const enrollmentTrends = [
 
 export const educationAttainment = [
   { level: "No formal education", value: 2.1,  color: "#9CA3AF" },
-  { level: "Primary",            value: 8.4,  color: "#0891B2" },
-  { level: "Secondary",          value: 31.2, color: "#0D9488" },
-  { level: "Vocational",         value: 22.5, color: "#C17F24" },
-  { level: "Bachelor's",         value: 24.6, color: "#E8963A" },
-  { level: "Master's+",          value: 11.2, color: "#B45309" },
+  { level: "Primary",            value: 8.4,  color: "#06B6D4" },
+  { level: "Secondary",          value: 31.2, color: "#10B981" },
+  { level: "Vocational",         value: 22.5, color: "#2563EB" },
+  { level: "Bachelor's",         value: 24.6, color: "#3B82F6" },
+  { level: "Master's+",          value: 11.2, color: "#2563EB" },
 ];
 
-// ─── Trends (multi-year compare) ─────────────────────────────────────────────
+// â”€â”€â”€ Trends (multi-year compare) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const cityEvolution = [
   { year: 2015, population: 1748000, employment: 93.2, co2: 3800000, transit: 1620000, housing: 3100, education: 88 },
   { year: 2016, population: 1769000, employment: 93.4, co2: 3720000, transit: 1720000, housing: 3300, education: 89 },
@@ -268,32 +268,33 @@ export const cityEvolution = [
   { year: 2024, population: 1890000, employment: 97.2, co2: 2630000, transit: 2350000, housing: 5050, education: 95 },
 ];
 
-// ─── Explorer: dataset catalogue ──────────────────────────────────────────────
+// â”€â”€â”€ Explorer: dataset catalogue â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const allDatasets = [
   { id: 1, title: "Population by District 2024",         category: "People",      subcategory: "Demographics",   rows: 28,  format: "CSV", updated: "Dec 2024", tags: ["population", "district"] },
-  { id: 2, title: "Age Distribution 2010–2024",          category: "People",      subcategory: "Demographics",   rows: 150, format: "JSON",updated: "Dec 2024", tags: ["age", "trend"] },
+  { id: 2, title: "Age Distribution 2010â€“2024",          category: "People",      subcategory: "Demographics",   rows: 150, format: "JSON",updated: "Dec 2024", tags: ["age", "trend"] },
   { id: 3, title: "Annual Migration Flow",               category: "People",      subcategory: "Migration",      rows: 20,  format: "CSV", updated: "Nov 2024", tags: ["migration", "flow"] },
   { id: 4, title: "Housing Stock by Type 2024",          category: "Housing",     subcategory: "Stock",          rows: 8,   format: "JSON",updated: "Nov 2024", tags: ["housing", "stock"] },
-  { id: 5, title: "Construction Permits 2015–2024",      category: "Housing",     subcategory: "Construction",   rows: 90,  format: "CSV", updated: "Nov 2024", tags: ["construction", "permits"] },
+  { id: 5, title: "Construction Permits 2015â€“2024",      category: "Housing",     subcategory: "Construction",   rows: 90,  format: "CSV", updated: "Nov 2024", tags: ["construction", "permits"] },
   { id: 6, title: "Average Rent Trend",                  category: "Housing",     subcategory: "Market",         rows: 36,  format: "JSON",updated: "Oct 2024", tags: ["rent", "market"] },
   { id: 7, title: "Public Transit Ridership Monthly",    category: "Mobility",    subcategory: "Transit",        rows: 144, format: "CSV", updated: "Dec 2024", tags: ["transit", "ridership"] },
   { id: 8, title: "Modal Split Survey",                  category: "Mobility",    subcategory: "Transport",      rows: 12,  format: "JSON",updated: "Sep 2024", tags: ["modal", "transport"] },
   { id: 9, title: "Traffic Congestion Index 2024",       category: "Mobility",    subcategory: "Traffic",        rows: 8736,format: "CSV", updated: "Dec 2024", tags: ["traffic", "congestion"] },
-  { id: 10,title: "Annual CO₂ Emissions",               category: "Environment", subcategory: "Climate",        rows: 10,  format: "JSON",updated: "Nov 2024", tags: ["co2", "emissions"] },
+  { id: 10,title: "Annual COâ‚‚ Emissions",               category: "Environment", subcategory: "Climate",        rows: 10,  format: "JSON",updated: "Nov 2024", tags: ["co2", "emissions"] },
   { id: 11,title: "Air Quality Index Monthly",           category: "Environment", subcategory: "Air Quality",    rows: 120, format: "CSV", updated: "Dec 2024", tags: ["air", "quality", "aqi"] },
   { id: 12,title: "Energy Mix 2024",                    category: "Environment", subcategory: "Energy",         rows: 6,   format: "JSON",updated: "Oct 2024", tags: ["energy", "renewable"] },
-  { id: 13,title: "Employment Rate 2010–2024",          category: "Economy",     subcategory: "Labour",         rows: 14,  format: "CSV", updated: "Oct 2024", tags: ["employment", "labour"] },
+  { id: 13,title: "Employment Rate 2010â€“2024",          category: "Economy",     subcategory: "Labour",         rows: 14,  format: "CSV", updated: "Oct 2024", tags: ["employment", "labour"] },
   { id: 14,title: "GDP Growth Annual",                  category: "Economy",     subcategory: "Economic",       rows: 14,  format: "JSON",updated: "Oct 2024", tags: ["gdp", "growth"] },
-  { id: 15,title: "Business Registrations 2019–2024",   category: "Economy",     subcategory: "Business",       rows: 60,  format: "CSV", updated: "Sep 2024", tags: ["business", "registrations"] },
-  { id: 16,title: "School Enrollment 2018–2024",        category: "Education",   subcategory: "Enrollment",     rows: 42,  format: "JSON",updated: "Sep 2024", tags: ["school", "enrollment"] },
+  { id: 15,title: "Business Registrations 2019â€“2024",   category: "Economy",     subcategory: "Business",       rows: 60,  format: "CSV", updated: "Sep 2024", tags: ["business", "registrations"] },
+  { id: 16,title: "School Enrollment 2018â€“2024",        category: "Education",   subcategory: "Enrollment",     rows: 42,  format: "JSON",updated: "Sep 2024", tags: ["school", "enrollment"] },
   { id: 17,title: "Education Attainment Survey",        category: "Education",   subcategory: "Attainment",     rows: 6,   format: "CSV", updated: "Aug 2024", tags: ["education", "attainment"] },
 ];
 
 export const categoryColors = {
-  People:      { bg: "rgba(13,148,136,0.10)",  text: "#0D9488", border: "rgba(13,148,136,0.25)"  },
-  Housing:     { bg: "rgba(193,127,36,0.10)",  text: "#A36318", border: "rgba(193,127,36,0.25)"  },
-  Mobility:    { bg: "rgba(8,145,178,0.10)",   text: "#0E7490", border: "rgba(8,145,178,0.25)"   },
-  Environment: { bg: "rgba(5,150,105,0.10)",   text: "#047857", border: "rgba(5,150,105,0.25)"   },
-  Economy:     { bg: "rgba(217,119,6,0.10)",   text: "#B45309", border: "rgba(217,119,6,0.25)"   },
-  Education:   { bg: "rgba(29,78,216,0.10)",   text: "#1D4ED8", border: "rgba(29,78,216,0.25)"   },
+  People:      { bg: "rgba(16,185,129,0.10)",  text: "#10B981", border: "rgba(16,185,129,0.25)"  },
+  Housing:     { bg: "rgba(37,99,235,0.10)",  text: "#2563EB", border: "rgba(37,99,235,0.25)"  },
+  Mobility:    { bg: "rgba(6,182,212,0.10)",   text: "#0E7490", border: "rgba(6,182,212,0.25)"   },
+  Environment: { bg: "rgba(16,185,129,0.10)",   text: "#059669", border: "rgba(16,185,129,0.25)"   },
+  Economy:     { bg: "rgba(217,119,6,0.10)",   text: "#2563EB", border: "rgba(217,119,6,0.25)"   },
+  Education:   { bg: "rgba(37,99,235,0.10)",   text: "#2563EB", border: "rgba(37,99,235,0.25)"   },
 };
+

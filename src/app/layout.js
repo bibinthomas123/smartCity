@@ -1,4 +1,5 @@
 import "./globals.css";
+import { LanguageProvider } from "@/lib/LanguageContext";
 import Sidebar from "@/components/layout/Sidebar";
 import MobileHeader from "@/components/layout/MobileHeader";
 
@@ -12,21 +13,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className="flex h-screen overflow-hidden antialiased"
-        style={{ background: "#F5EDD8", color: "#2D1F0F" }}
+        style={{ background: "#F8FAFC", color: "#0F172A" }}
       >
-        {/* Fixed left sidebar — hidden on mobile */}
-        <Sidebar />
-
-        {/* Main area */}
-        <div className="flex flex-1 flex-col overflow-hidden">
-          {/* Mobile top bar */}
-          <MobileHeader />
-
-          {/* Scrollable content */}
-          <main className="flex-1 overflow-y-auto">
-            {children}
-          </main>
-        </div>
+        <LanguageProvider>
+          <Sidebar />
+          <div className="flex flex-1 flex-col overflow-hidden">
+            <MobileHeader />
+            <main className="flex-1 overflow-y-auto">
+              {children}
+            </main>
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );
