@@ -3,6 +3,8 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 import Sidebar from "@/components/layout/Sidebar";
 import MobileHeader from "@/components/layout/MobileHeader";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Magdeburg City Explorer",
   description: "Explore real-time and historical data for Magdeburg: people, housing, mobility, environment, economy and more.",
